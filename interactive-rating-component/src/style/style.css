@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Overpass';
+}
+
+:root {
+  --primary-color: hsl(25, 97%, 53%);
+  --card-background: hsl(213, 19%, 18%);
+  --header-font: hsl(0, 0%, 100%);
+  --paragraph-font: hsl(217, 12%, 63%);
+  --background-btn: hsl(218, 10%, 47%);
+  --background-rating: hsl(216, 12%, 10%, 50%);
+}
+
+.app-position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: hsl(216, 12%, 8%);
+  overflow: hidden;
+}
+
+.card {
+  background: var(--card-background);
+  min-width: 320px;
+  max-width: 350px;
+  padding: 30px;
+  background: var(--card-background);
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.082);
+}
+
+.thank-you-card {
+  position: absolute;
+  bottom: 0%;
+  opacity: 0;
+  z-index: -1;
+  text-align: center;
+  transition: opacity 300ms ease-in, bottom 500ms ease-in;
+}
+
+.thank-you-active {
+  bottom: auto;
+  opacity: 1;
+  z-index: 1;
+  text-align: center;
+}
+
+.result-display {
+  color: var(--primary-color);
+  background: var(--background-rating);
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 20px;
+  margin: 1.5em 0em;
+}
+
+.star-svg {
+  background: var(--background-btn);
+  padding: 0.3em;
+  border-radius: 30px;
+  font-size: 30px;
+}
+
+h2 {
+  color: var(--header-font);
+  margin-top: 0.5em;
+}
+
+p,
+button {
+  color: var(--paragraph-font);
+}
+
+button {
+  margin-top: 2em;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.rating-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.rating {
+  width: 60px;
+  height: 45px;
+  background-color: var(--background-btn);
+  transition: background-color 200ms ease-in-out, color 500ms ease-in-out;
+}
+.rating:hover {
+  background-color: var(--paragraph-font);
+  color: var(--header-font);
+}
+.selected {
+  background-color: var(--primary-color);
+  color: var(--header-font);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  text-transform: uppercase;
+  color: var(--header-font);
+  background-color: var(--primary-color);
+  transition: transform 300ms ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.03);
+}
